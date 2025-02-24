@@ -1,0 +1,319 @@
+* {
+  box-sizing: inherit;
+  font-family: inherit;
+}
+
+body {
+  /*font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  box-sizing: border-box;
+  margin: 2rem;
+  overflow: hidden; /* Prevent scrolling while the dialog is open */
+}
+
+.printers-list {
+  display: flex;
+  flex-direction: column; /* Set to column to stack items vertically */
+  align-items: left;
+}
+
+.print-jobs-list {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column; /* Set to column to stack items vertically */
+  align-items: left;
+}
+
+.printer-with-jobs {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  max-width: 500px;
+}
+
+.printer {
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 24px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px -1px,
+    rgba(0, 0, 0, 0.14) 0 6px 10px 0, rgba(0, 0, 0, 0.12) 0 1px 18px 0;
+  box-sizing: border-box;
+  color: #3c4043;
+  display: inline-flex;
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  /*justify-content: center;*/
+  letter-spacing: 0.25px;
+  line-height: normal;
+  height: 50px;
+  margin-top: 10px;
+  overflow: visible;
+  padding: 10px 24px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  /*transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1), opacity 15ms linear 30ms, transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;*/
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;
+  will-change: transform, opacity;
+  z-index: 0;
+  gap: 10px;
+}
+
+.print-job {
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 24px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px -1px,
+    rgba(0, 0, 0, 0.14) 0 6px 10px 0, rgba(0, 0, 0, 0.12) 0 1px 18px 0;
+  box-sizing: border-box;
+  color: #3c4043;
+  display: inline-flex;
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  /*justify-content: center;*/
+  letter-spacing: 0.25px;
+  line-height: normal;
+  height: 30px;
+  margin-top: 5px;
+  overflow: visible;
+  padding: 10px 24px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  /*transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1), opacity 15ms linear 30ms, transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;*/
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;
+  will-change: transform, opacity;
+  z-index: 0;
+  gap: 10px;
+}
+
+.print-job > .print-job-state {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 24px;
+}
+
+.print-job > .print-job-pages {
+  margin-left: auto;
+  display: flex;
+  flex-direction: row;
+  gap: 3px;
+  width: 60px;
+  align-items: center;
+}
+
+button {
+  align-items: center;
+  appearance: none;
+  background-color: #ffffff;
+  border-radius: 24px;
+  border-style: none;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px -1px,
+    rgba(0, 0, 0, 0.14) 0 6px 10px 0, rgba(0, 0, 0, 0.12) 0 1px 18px 0;
+  box-sizing: border-box;
+  color: #3c4043;
+  cursor: pointer;
+  display: inline-flex;
+  fill: currentcolor;
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 32px;
+  justify-content: center;
+  letter-spacing: 0.25px;
+  line-height: normal;
+  max-width: 100%;
+  overflow: visible;
+  padding: 10px 24px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 15ms linear 30ms, transform 270ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;
+  will-change: transform, opacity;
+  z-index: 0;
+  margin: 10px inherit;
+}
+
+.printer .printer-buttons {
+  margin-left: auto;
+}
+
+.printer-buttons button {
+  border: none;
+  box-shadow: none !important;
+}
+
+button:hover {
+  background: #f6f9fe;
+  color: #174ea6;
+}
+
+button:active {
+  box-shadow: 0 4px 4px 0 rgb(60 64 67 / 30%),
+    0 8px 12px 6px rgb(60 64 67 / 15%);
+  outline: none;
+}
+
+button:not(:disabled) {
+  box-shadow: rgba(60, 64, 67, 0.3) 0 1px 3px 0,
+    rgba(60, 64, 67, 0.15) 0 4px 8px 3px;
+}
+
+button:not(:disabled):hover {
+  box-shadow: rgba(60, 64, 67, 0.3) 0 2px 3px 0,
+    rgba(60, 64, 67, 0.15) 0 6px 10px 4px;
+}
+
+button:disabled {
+  box-shadow: rgba(60, 64, 67, 0.3) 0 1px 3px 0,
+    rgba(60, 64, 67, 0.15) 0 4px 8px 3px;
+}
+
+.glitchButton {
+  position: fixed !important;
+  top: 1.25rem;
+  right: 1.25rem;
+}
+
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+#printDialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  z-index: 2;
+
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 24px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px -1px,
+    rgba(0, 0, 0, 0.14) 0 6px 10px 0, rgba(0, 0, 0, 0.12) 0 1px 18px 0;
+  box-sizing: border-box;
+  color: #3c4043;
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  /*justify-content: center;*/
+  letter-spacing: 0.25px;
+  line-height: normal;
+  margin-top: 10px;
+  overflow: visible;
+  text-transform: none;
+  /*transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1), opacity 15ms linear 30ms, transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;*/
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  will-change: transform, opacity;
+  gap: 10px;
+}
+
+#printDialog label {
+  display: block;
+}
+
+#printDialog button {
+  margin-top: 10px;
+}
+
+.printDialogSelector {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.printDialogSelector > * {
+  flex: 1;
+  width: 100%;
+}
+
+.printDialogSelectorLabel {
+  margin-left: auto;
+}
+
+#printDialogButtons {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+#printDialogButtons button {
+  flex: 1;
+}
+
+.printDialogIconWithName {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
+
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555555;
+  color: #ffffff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555555 transparent transparent transparent;
+}
+
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}

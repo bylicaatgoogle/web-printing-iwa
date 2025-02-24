@@ -1,0 +1,26 @@
+{
+  "name": "coralfish-dev-access",
+  "version": "0.0.1",
+  "description": "A simple PWA for testing Coralfish APIs.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "12.x"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "hbs": "^4.1.2"
+  },
+  "repository": {
+    "url": "https://glitch.com/edit/#!/coralfish-dev-access"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express",
+    "pwa"
+  ]
+}
